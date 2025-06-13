@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boston House Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 30px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Boston House Price Predictor</h2>
+        <form method="POST">
+            <input type="text" name="features" placeholder="Enter comma-separated values" required>
+            <button type="submit">Predict</button>
+        </form>
+        {% if prediction %}
+            <p>Predicted Price: ${{ prediction }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
