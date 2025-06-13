@@ -11,7 +11,9 @@ def home():
     prediction = None
     if request.method == 'POST':
         try:
-            features = [float(x) for x in request.form.values()]
+            # Get input from form and convert comma-separated to float list
+            features_str = request.form['features']
+            features = [float(x.strip()) for x in features_str.split(',')]
             final = [np.array(features)]
             prediction = model.predict(final)[0]
         except Exception as e:
