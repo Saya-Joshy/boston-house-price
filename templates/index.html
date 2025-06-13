@@ -16,17 +16,33 @@
             width: 400px;
             margin: auto;
         }
+        input, button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        h2 {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Boston House Price Predictor</h2>
-        <form method="POST">
+        <form method="POST" action="/">
             <input type="text" name="features" placeholder="Enter comma-separated values" required>
             <button type="submit">Predict</button>
         </form>
-        {% if prediction %}
-            <p>Predicted Price: ${{ prediction }}</p>
+
+        {% if prediction_text %}
+            <p><strong>{{ prediction_text }}</strong></p>
         {% endif %}
     </div>
 </body>
